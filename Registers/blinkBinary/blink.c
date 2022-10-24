@@ -11,8 +11,8 @@ int main() {
 
     while (true) {
 		if (!(PINB & _BV(0))) {		// Check if button is pushed
-	        PORTD += 1 << 0; 		// Increment binary count
+			PORTD += 1 << 0; 		// Increment binary count
 			_delay_ms(BLINK_MS);
 		}
-    }
+	}
 }
