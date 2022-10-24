@@ -4,11 +4,9 @@
 
 #define BLINK_MS 200
 
-//#define MASK(x) ((unsigned char) (1<<(x))) = _BV()
-
 int main() {
 
-    DDRD = 0xFF;	// Set DDRD to 0b11111111
+	DDRD = 0xFF;	// Set DDRD to 0b11111111
 	PORTB = _BV(0);	// Enable pullup resistor on pin0
 
     while (true) {
