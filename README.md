@@ -1,3 +1,3 @@
 # Embedded_Systems
 
-Learning Embedded Systems, beginning with exploring Arduino "under the hood"
+My path to learn about Embedded Systems 
