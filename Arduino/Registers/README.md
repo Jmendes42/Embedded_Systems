@@ -24,7 +24,7 @@ There are three ports in the Arduino (ATMEGA328p), port B, C and D. Each port co
   - **PIN**xn (PIN register) is nomenclature for the pins in a specific port.
 
 **DD**xn bits are accessed at the **DDR**x I/O address, the **PORT**xn bits at the **PORT**x I/O address, and the **PIN**xn
-bits at the PINx I/O address.
+bits at the **PIN**x I/O address.
 
 If **DD**xn is written as a one, **PIN**xn is configured as an output. If **DD**xn is written as a zero, **PIN**xn is configured as an input.
 
