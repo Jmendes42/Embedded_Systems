@@ -3,7 +3,6 @@
 #include <util/delay.h>
 #include <avr/interrupt.h>
 
-#define MS 500
 const unsigned char numbers[10] = {0x3F, 0x6, 0x5B, 0x4F, 0x66, 0x6D, 0x7D, 0x7, 0x7F, 0x67};
 
 int i = 0;
@@ -18,27 +17,27 @@ ISR(TIMER1_OVF_vect)
 
 void	minutes(int min) {
 
-		if (min < 10) {
-			PORTB ^= _BV(2);
-			PORTD |= numbers[min] | _BV(7);
-			_delay_ms(1);
-			PORTB ^= _BV(2);
-			PORTB ^= _BV(3);
-			PORTD = numbers[0];
-			_delay_ms(1);
-			PORTB ^= _BV(3);
-		}
-		else {
-			int deciMin = min / 10;
-			PORTB ^= _BV(3);
-			PORTD = numbers[deciMin];
-			_delay_ms(1);
-			PORTB ^= _BV(3);
-			PORTB ^= _BV(2);
-			PORTD = numbers[min - (deciMin * 10)];
-			_delay_ms(1);
-			PORTB ^= _BV(2);
-		}
+	if (min < 10) {
+		PORTB ^= _BV(2);
+		PORTD |= numbers[min] | _BV(7);
+		_delay_ms(1);
+		PORTB ^= _BV(2);
+		PORTB ^= _BV(3);
+		PORTD = numbers[0];
+		_delay_ms(1);
+		PORTB ^= _BV(3);
+	}
+	else {
+		int deciMin = min / 10;
+		PORTB ^= _BV(3);
+		PORTD = numbers[deciMin];
+		_delay_ms(1);
+		PORTB ^= _BV(3);
+		PORTB ^= _BV(2);
+		PORTD = numbers[min - (deciMin * 10)];
+		_delay_ms(1);
+		PORTB ^= _BV(2);
+	}
 }
 
 int		secconds() {
@@ -72,8 +71,6 @@ int		main()
 {
 	DDRB = 0xF;
 	DDRD = 0xFF;
-
-	int slot = 0;
 
 	// ENABLE THE GLOBAL INTERRUPT ENABLE BIT
 	sei(); 
