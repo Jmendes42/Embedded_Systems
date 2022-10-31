@@ -1,3 +1,16 @@
 # Embedded_Systems
+GPIO - General Purpose Input Output:
+	Ways for the microcontroller to comunicate with the external world. They can either output one of two values or read one of two of the same values. These values are logical 0 which corresponds to 0 volts, and logical 1 which corresponds to usually 3.5 to 5 volts more or less. The way to read or output the value from a pin is trhough registers.
 
-My path to learn about Embedded Systems 
+INTERRUPTS -> used to run a block of code after an event happened
+
+TIMERS -> with a timer timeouts can be created, count for how long process take, can trigger interrupts. A timer usually counts up and down or continuosly. What countig up means is that a value is set in the register and the timer counts up to that value, and when that value uis reached the timer resets. Count up and down means that the timer will count up to the value that was set and then count down to zero and then reset. With counter continously it will continue to count until it overflows on its maximum value and then restart. The maximum value to which a counter can count up to will deppend on how many bits the timer is actually running. For example, if we have a 3 bit timer, the maximum value it will be able to count will be 7(111)(2^3 - 1)
+
+	CCP - Capture compare and pulse with modulation modules. The capture module allows us to time different processes and the way we do this is by supplying a signal to the module then we can actually find a time difference between two edges of the signal, this happens by saving a snapshot of the value that the timer has counted up to when the other edge happened then it's just a matter of subtracting these two values, and just converting it into time because we know the frequencywith which the timer counts up. The compare modeis kind of the oposite because it allows us to output pulse with modulated signals or signals where we modifythe duty factor, so we have a fixed frequency and then we can choose how long the logical one or logical zero lasts within one period, this would for example be useful if wewant ot control how fast a dc motor spins. The way the compare code works is by setting a value in a register and then the timer is going to create an edge on the ourtput signal when the timer counts up to that value, and then the other edge happens when the timer overflows.
+
+ADC -> Analog to Digital Converter - This allows to work with analog signal input. It only reads integer numbers, which means that there will allways be an error between the value going to the ADC and the real value. This is known as the quantization error and it will allways be smaller than half the quantization step. With a 3 bit ADC we have 8 steps, from 0 to 7, and this will be the outputs. There is also the oposit withc is DAC Digital to Analog Converter
+
+Serial Interfaces:
+	-> UART - Universal Asynchronous Receiver Transmitter and it only requires two data lines. It requires setting up the baud rate, or the rate at which you're transmitting data on both systems, which are going to communicate before actually initiating the communication, and it also doesn't allow more than two devices to communicate at once
+
+All that registers are is location memmories which are allocated to a specific peripheral so that it can be interacted with, set it up, and take values from it

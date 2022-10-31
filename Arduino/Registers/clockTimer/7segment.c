@@ -30,11 +30,11 @@ void	minutes(int min) {
 	else {
 		int deciMin = min / 10;
 		PORTB ^= _BV(3);
-		PORTD = numbers[deciMin] | _BV(7);
+		PORTD = numbers[deciMin];
 		_delay_ms(1);
 		PORTB ^= _BV(3);
 		PORTB ^= _BV(2);
-		PORTD = numbers[min - (deciMin * 10)];
+		PORTD = numbers[min - (deciMin * 10)] | _BV(7);
 		_delay_ms(1);
 		PORTB ^= _BV(2);
 	}
