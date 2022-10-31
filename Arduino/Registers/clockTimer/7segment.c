@@ -30,7 +30,7 @@ void	minutes(int min) {
 	else {
 		int deciMin = min / 10;
 		PORTB ^= _BV(3);
-		PORTD = numbers[deciMin];
+		PORTD = numbers[deciMin] | _BV(7);
 		_delay_ms(1);
 		PORTB ^= _BV(3);
 		PORTB ^= _BV(2);
