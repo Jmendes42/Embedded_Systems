@@ -1,6 +1,6 @@
 ## Registers
 
-- Registers are fast storage locations that can store binary data. They are meant to temporarily store data which needs to be processed by the CPU, or to store addresses pointed to data which needs to be fetched. They are meant to store the current context of the CPU.
+- Registers are fast storage locations that can store binary data. They temporarily store data that needs to be processed by the CPU, or store addresses pointed to data that needs to be fetched.
 
 In Arduino (ATMEGA328p) there are three main memory blocks or types:
 
