@@ -3,11 +3,11 @@
 #include <util/delay.h>
 #include <avr/interrupt.h>
 
+// Numbers on the 7 segment display
 const unsigned char numbers[10] = {0x3F, 0x6, 0x5B, 0x4F, 0x66, 0x6D, 0x7D, 0x7, 0x7F, 0x67};
 
 int i = 0;
 
-//IMPLEMENT THE INTERRUPT HANDLER FUNCTION
 ISR(TIMER1_OVF_vect)
 {
 	// USER CODE
@@ -72,21 +72,10 @@ int		main()
 	DDRB = 0xF;
 	DDRD = 0xFF;
 
-	// ENABLE THE GLOBAL INTERRUPT ENABLE BIT
 	sei(); 
 
-	// ENABLE THE REQUIRED TIMER INTERRUPT
-	TIMSK1 |= 1 << TOIE1;
-
-	//SET THE MODE OF THE TIMER
-	TCCR1A &= ~(1 << WGM10) & ~(1 << WGM11);
-	TCCR1B &= ~(1 << WGM12) & ~(1 << WGM13);
-
-	//SET THE PRESCALER FOR THE TIMER
-	TCCR1B |= _BV(CS10) | _BV(CS12);
-	TCCR1B &= ~_BV(CS11);						// PRESCALAR TO 1024
-
-	//SET THE PERIOD FOR THE TIMER
+	TIMSK1 |= 1 << TOIE1;						// Enable timer 1
+	TCCR1B |= _BV(CS10) | _BV(CS12);			// PRESCALAR TO 1024
 	TCNT1 = 49910;								// VALUE FROM WICH THE COUNTER STARTS FOR 1S
 
 	int min = 0;
