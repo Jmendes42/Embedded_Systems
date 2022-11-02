@@ -11,6 +11,8 @@ For this project, my goals were:
   - Conciliate both registers and timers;
   - Also got the opportunity to get familiar with the four seven segment display;
 
+[Peripherals](https://github.com/joao-mendes723/Embedded_Systems/wiki/Peripherals)
+
 ![Untitled ‑ Made with FlexClip(12)](https://user-images.githubusercontent.com/74921179/199434645-3efd5a59-6628-4c31-bc5d-698023d9b08d.gif)
 
 **Notes:**
