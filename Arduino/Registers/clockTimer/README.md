@@ -11,8 +11,7 @@ For this project, my goals were:
   - Conciliate both registers and timers;
   - Also got the opportunity to get familiar with the four seven segment display;
 
-![Untitled ‑ Made with FlexClip(11)](https://user-images.githubusercontent.com/74921179/198902740-0fd528ea-ffc1-4f60-b139-73517a4b46ca.gif)
-
+![Untitled ‑ Made with FlexClip(12)](https://user-images.githubusercontent.com/74921179/199434645-3efd5a59-6628-4c31-bc5d-698023d9b08d.gif)
 
 **Notes:**
 
