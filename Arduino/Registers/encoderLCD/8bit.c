@@ -1,0 +1,28 @@
+#include "LCD.h"
+
+// 8bits
+void	8b_writeLCD(unsigned char c) {
+
+	PORTD = c;
+	PORTB |= _BV(PB0) | _BV(PB2);
+	PORTB &= ~_BV(PB1);
+	_delay_ms(5);
+	PORTB &= ~_BV(PB2);
+}
+
+void	8b_command(unsigned char cmd) {
+	
+	PORTD = cmd;
+	PORTB &= ~_BV(PB0) & ~_BV(PB1);
+	PORTB |= _BV(PB2);
+	_delay_ms(5);
+	PORTB &= ~_BV(PB2);
+}
+void	8b_initialize_lcd() {
+
+	command(0x38);
+	command(0x06);
+	command(0x0F);
+	command(0x01);
+}
+

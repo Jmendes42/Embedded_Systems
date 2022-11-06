@@ -74,7 +74,7 @@ int		main()
 
 	sei(); 
 
-	TIMSK1 |= 1 << TOIE1;						// Enable timer 1
+	TIMSK1 |= _BV(TOIE1);						// Enable timer 1
 	TCCR1B |= _BV(CS10) | _BV(CS12);			// PRESCALAR TO 1024
 	TCNT1 = 49910;								// VALUE FROM WICH THE COUNTER STARTS FOR 1S
 
