@@ -7,7 +7,7 @@
 
 [Rotary Encoder](https://www.allaboutcircuits.com/projects/how-to-use-a-rotary-encoder-in-a-mcu-based-project/)
 
-This project consists on an LCD screen controled by a rotary encoder. It lets you choose a username and saves it.
+This project consists of an LCD screen controlled by a rotary encoder. It lets you choose a username and saves it.
 
 #### Goals for this project:
 
@@ -32,4 +32,4 @@ This project consists on an LCD screen controled by a rotary encoder. It lets yo
 #### Notes:
 
   - To activate external interrupts in **PORTC** activate the **PCIF1** bit on the **PCIFR** register -> 12.2.5 in the ATMEGA328P Datasheet
-  - Then activate the desired pins in the **PCMSK1** register -> 12.2.7 12.2.7
+  - Then activate the desired pins in the **PCMSK1** register -> 12.2.7 in the ATMEGA328P Datasheet
