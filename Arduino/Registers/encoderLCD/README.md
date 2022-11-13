@@ -1,5 +1,11 @@
 
+#### Useful Links
+
 [LCD Module DataSheet](https://www.openhacks.com/uploadsproductos/eone-1602a1.pdf)
+
+[AVR Macros Used](https://manpages.debian.org/testing/avr-libc/loop_until_bit_is_set.3avr.en.html)
+
+[Rotary Encoder](https://www.allaboutcircuits.com/projects/how-to-use-a-rotary-encoder-in-a-mcu-based-project/)
 
 #### Goals for this project:
 
