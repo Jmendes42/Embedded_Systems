@@ -1,4 +1,4 @@
-#include "LCD.h"
+#include "../include/LCD.h"
 
 // 8bits
 void	8b_writeLCD(unsigned char c) {

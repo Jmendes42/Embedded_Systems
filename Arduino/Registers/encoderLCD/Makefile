@@ -1,15 +1,13 @@
 # Compiler options
 CC=avr-gcc
 CFLAGS= -Os -DF_CPU=16000000UL -mmcu=atmega328p
-
-# Compiling
-all: encoder.out
+SRC = $(wildcard ./src/*.c)
 
 # Arduino port run ls ~/dev/tty*
 USBPORT:=$(shell ls /dev/ttyACM0)
 
 %.out: %.c
-	$(CC) $(CFLAGS) $< -o $@
+	$(CC) $(SRC) $(CFLAGS) $< -o $@
 
 %.hex: %.out
 	avr-objcopy -O ihex -R .eeprom $< $@

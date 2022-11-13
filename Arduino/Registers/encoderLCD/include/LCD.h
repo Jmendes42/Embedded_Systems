@@ -6,6 +6,15 @@
 #include <util/delay.h>
 #include <avr/interrupt.h>
 
+#define ROTA !(_BV(PC2) & PINC)
+#define ROTB !(_BV(PC1) & PINC)
+
+// UTILS
+void	init();
+void	rotate();
+void	writeUser();
+void	letterSet();
+void	writeSaved();
 void	string(unsigned char *str, unsigned char len);
 
 // 4BITS
