@@ -7,6 +7,8 @@
 
 [Rotary Encoder](https://www.allaboutcircuits.com/projects/how-to-use-a-rotary-encoder-in-a-mcu-based-project/)
 
+This project consists on an LCD screen controled by a rotary encoder. It lets you choose a username and saves it.
+
 #### Goals for this project:
 
   - Get familiar with LCD 1602 module;
@@ -23,3 +25,11 @@
     - 0x80 ; 10000000	-> Cursor on 0,0;
     - 0xC0 ; 11000000	-> Cursor on 1,0;
     - 0x0F ; 1111	-> Display on, cursor blink;
+
+![encoder](https://user-images.githubusercontent.com/74921179/201549936-423a6f95-6687-48c8-8886-de9c8873039e.gif)
+
+
+#### Notes:
+
+  - To activate external interrupts in **PORTC** activate the **PCIF1** bit on the **PCIFR** register -> 12.2.5 in the ATMEGA328P Datasheet
+  - Then activate the desired pins in the **PCMSK1** register -> 12.2.7 12.2.7
